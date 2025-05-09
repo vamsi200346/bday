@@ -122,6 +122,7 @@ const Slide = styled.div`
 
 const SlideContent = styled.div`
   display: flex;
+  
   gap: 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
@@ -134,6 +135,7 @@ const SlideContent = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 1rem;
+    gap:1rem;
     max-height: 70vh;
   }
 `;
@@ -176,7 +178,7 @@ const ImageSection = styled.div`
 const PageImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 15px;
   transition: transform 0.3s ease;
 
@@ -223,32 +225,32 @@ const RightNavigationArrow = styled(NavigationArrow)`
 
 const bookContent = [
   {
-    text: "On this special day, I want to celebrate the amazing person you are. Your smile brightens up my world, and your love makes every day worth living.",
+    text: "Respected Madam, I am fine here and hope the same with you. Today is your birthday, so Happy Birthday Madam.",
     image:
       "https://drive.google.com/thumbnail?id=16SgXpWjO6wiRhhl5T6JphqZN_-KFAMeN&sz=w1000",
   },
   {
-    text: "Every moment with you is a treasure. Your kindness, your warmth, and your beautiful soul make you the most wonderful person I know.",
-    image:
-      "https://drive.google.com/thumbnail?id=18EmZ0U40dHRVP3sJr0vLqS5YXSW4ne-S&sz=w1000",
-  },
-  {
-    text: "You are my best friend, my confidant, and my greatest love. I cherish every memory we've created together and look forward to many more.",
+    text: "Hai tho start ayina mana parichayam intha harsh ga vuntundi ani teliyaledu appudu 😢. But anyway happy birthday.",
     image:
       "https://drive.google.com/thumbnail?id=18N8ztxwTvvrG0hlNHQvg_yuG0udAk4Kk&sz=w1000",
   },
   {
-    text: "Your love has transformed my life in ways I never thought possible. You make me want to be a better person every day.",
+    text: "Many memories with you and many more to come (jnapakalu manchivi ayina cheddavi ayina manathone vuntaii moyaka tappadu).",
     image:
-      "https://drive.google.com/thumbnail?id= 18h41HOIT-koBGwGTUqUgd6Ew3glEbrbq&sz=w1000",
+      "https://drive.google.com/thumbnail?id=18EmZ0U40dHRVP3sJr0vLqS5YXSW4ne-S&sz=w1000",
   },
   {
-    text: "I promise to love you more with each passing day, to support your dreams, and to be there for you through all of life's adventures.",
+    text: "You think you are silent but i know how violent you are. To the angel you look like and the devil inside you. Happy Birthday!!",
+    image:
+      "https://drive.google.com/thumbnail?id=18h41HOIT-koBGwGTUqUgd6Ew3glEbrbq&sz=w1000",
+  },
+  {
+    text: "Ippatike pedda danivi ippudu inka pedda ayyav. Pedda vallaki namaskaristhu🙏 cheptundi enti ante janmadina subhakanshalu.",
     image:
       "https://drive.google.com/thumbnail?id=18Ha0eA58MlXyT5OGiOXk25U_unk7Nq0J&sz=w1000",
   },
   {
-    text: "Happy Birthday, my love. May this year bring you all the happiness, success, and love that you deserve. I love you more than words can express.",
+    text: "Budi Budi adugula maa buddayi ki nee mitrudu prematho cheptundi enti ante.. Happy Birthday Potato 🎈😆",
     image:
       "https://drive.google.com/thumbnail?id=16cpSIMUZUAX_spsUohld53xp7EYE8Mhf&sz=w1000",
   },
@@ -291,7 +293,8 @@ function Book() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Our Story
+        Happy Birthday Madam
+      
       </Title>
 
       <CarouselContainer>

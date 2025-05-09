@@ -239,19 +239,15 @@ function Home() {
   const decorations = [
     "🎈",
     "🎉",
-    "🎈",
     "🎁",
     "🎈",
     "🎊",
-    "🎈",
     "🎂",
     "🎈",
     "🎉",
-    "🎈",
     "🎁",
     "🎈",
     "🎉",
-    "🎈",
     "🎁",
     "🎈",
     "🎊",
@@ -348,7 +344,7 @@ function Home() {
 
       <RainbowText>
         <TextLine>{splitText("Happy Birthday")}</TextLine>
-        <NameText>{splitText("KAVYA")}</NameText>
+        <NameText>{splitText("DISTURBANCE")}</NameText>
       </RainbowText>
 
       <ContentWrapper>

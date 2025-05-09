@@ -14,7 +14,7 @@ const GalleryContainer = styled.div`
   justify-content: center;
   align-items: center;
   background: #e1ddc6;
-  padding: 2rem;
+  padding: 0 2rem;
 `;
 
 const Title = styled(motion.h1)`
