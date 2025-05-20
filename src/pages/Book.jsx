@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import fallbackImage from "../assets/heroImg.jpg";
+import BackgroundMusic from "../components/BackgroundMusic";
 
 const BookContainer = styled.div`
   width: 100%;
@@ -288,6 +289,7 @@ function Book() {
 
   return (
     <BookContainer>
+      <BackgroundMusic />
       <Title
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import fallbackImage from "../assets/heroImg.jpg";
+import BackgroundMusic from "../components/BackgroundMusic";
 
 const GalleryContainer = styled.div`
   width: 100%;
@@ -209,40 +210,43 @@ function Gallery() {
   const navigate = useNavigate();
 
   return (
-    <GalleryContainer>
-      <Title
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Memories
-      </Title>
+    <div>
+      <BackgroundMusic />
+      <GalleryContainer>
+        <Title
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Memories
+        </Title>
 
-      <CarouselContainer>
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <Slide key={index}>
-              <Image
-                src={image}
-                alt={`Memory ${index + 1}`}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = fallbackImage;
-                }}
-              />
-            </Slide>
-          ))}
-        </Slider>
-      </CarouselContainer>
+        <CarouselContainer>
+          <Slider {...settings}>
+            {images.map((image, index) => (
+              <Slide key={index}>
+                <Image
+                  src={image}
+                  alt={`Memory ${index + 1}`}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = fallbackImage;
+                  }}
+                />
+              </Slide>
+            ))}
+          </Slider>
+        </CarouselContainer>
 
-      <NavigationArrow
-        onClick={() => navigate("/book")}
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        ←
-      </NavigationArrow>
-    </GalleryContainer>
+        <NavigationArrow
+          onClick={() => navigate("/book")}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          ←
+        </NavigationArrow>
+      </GalleryContainer>
+    </div>
   );
 }
 

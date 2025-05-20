@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import confetti from "canvas-confetti";
 import cakeImg from "../assets/cake2.png";
 import heroImage from "../assets/heroImg.jpg";
+import BackgroundMusic from "../components/BackgroundMusic";
+
 const HomeContainer = styled.div`
   height: 100vh;
   background: #e1ddc6;
@@ -316,76 +318,79 @@ function Home() {
   }, []);
 
   return (
-    <HomeContainer>
-      <HangingDecorations
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, type: "spring" }}
-      >
-        {decorations.map((item, index) => (
-          <DecorationItem
-            key={index}
-            style={getDecorationStyle(index)}
-            initial={{ y: -20, rotate: -10 }}
-            animate={{
-              y: 0,
-              rotate: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.1,
-              type: "spring",
-            }}
-          >
-            {item}
-          </DecorationItem>
-        ))}
-      </HangingDecorations>
-
-      <RainbowText>
-        <TextLine>{splitText("Happy Birthday")}</TextLine>
-        <NameText>{splitText("DISTURBANCE")}</NameText>
-      </RainbowText>
-
-      <ContentWrapper>
-        <AnimationContainer>
-          <FloatingImage
-            src={cakeImg}
-            alt="Birthday Cake"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1,
-              delay: 0.5,
-            }}
-          />
-        </AnimationContainer>
-
-        <Card
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+    <div>
+      <BackgroundMusic />
+      <HomeContainer>
+        <HangingDecorations
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.5, type: "spring" }}
         >
-          <CardImage
-            src="https://drive.google.com/uc?export=view&id=16odg5mEi_1x-TxvrwkSi5aA6G9MrIF5o"
-            alt="Birthday Card"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = heroImage;
-              // Fallback to local image if Google Drive fails
-            }}
-          />
-        </Card>
-      </ContentWrapper>
+          {decorations.map((item, index) => (
+            <DecorationItem
+              key={index}
+              style={getDecorationStyle(index)}
+              initial={{ y: -20, rotate: -10 }}
+              animate={{
+                y: 0,
+                rotate: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                type: "spring",
+              }}
+            >
+              {item}
+            </DecorationItem>
+          ))}
+        </HangingDecorations>
 
-      <NavigationArrow
-        onClick={() => navigate("/book")}
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        →
-      </NavigationArrow>
-    </HomeContainer>
+        <RainbowText>
+          <TextLine>{splitText("Happy Birthday")}</TextLine>
+          <NameText>{splitText("DISTURBANCE")}</NameText>
+        </RainbowText>
+
+        <ContentWrapper>
+          <AnimationContainer>
+            <FloatingImage
+              src={cakeImg}
+              alt="Birthday Cake"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+              }}
+            />
+          </AnimationContainer>
+
+          <Card
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <CardImage
+              src="https://drive.google.com/uc?export=view&id=16odg5mEi_1x-TxvrwkSi5aA6G9MrIF5o"
+              alt="Birthday Card"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = heroImage;
+                // Fallback to local image if Google Drive fails
+              }}
+            />
+          </Card>
+        </ContentWrapper>
+
+        <NavigationArrow
+          onClick={() => navigate("/book")}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          →
+        </NavigationArrow>
+      </HomeContainer>
+    </div>
   );
 }
 
